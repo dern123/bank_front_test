@@ -1,7 +1,15 @@
 .App {
   text-align: center;
 }
-
+.container_app{
+  display: flexbox;
+  height: 100vh;
+  flex-direction: column;
+}
+main{
+  flex: 1;
+  height: 100%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

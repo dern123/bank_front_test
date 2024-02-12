@@ -1,0 +1,21 @@
+.links__container{
+    display: flex;
+    padding: 0;
+}
+.link__wrapper{
+    margin-right: 10px;
+    background-color: #252a84;
+    color:#ffffff;
+    padding: 5px;
+    list-style: none;
+    border: none;
+    border-radius: 5px;
+    transition: box-shadow ease .2s;
+    .link__wrapper-item{
+        color: #ffffff;
+        text-decoration: none;
+    }
+    &:hover{
+        box-shadow: 0px 2px 0px #4a51d0;
+    }
+}

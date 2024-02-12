@@ -9,21 +9,30 @@ import Edit from "../pages/Edit/Edit";
 import Gamefiacation from "../pages/Gamefication/Gamefication";
 import Statistic from "../pages/Statistic/Statistic";
  
-const AppRoutes = () => {
-    return( 
-        <Routes>
-            <Route path="/" element={<Navigate to="/registration" />} />
-            <Route path='/registration' element={<Registration/>}/>
-            <Route path='/signin' element={<SignIn/>}/>
-            <Route path='/dashboard' element={<Dashboard/>}/>
-            <Route path='/account' element={<Account/>}/>
-            <Route path='/edit' element={<Edit/>}/>
-            <Route path='/transaction' element={<Transaction/>}/>
-            <Route path="/statistic" element={<Statistic/>}/>
-            <Route path='/gamefication' element={<Gamefiacation/>}/>
-            <Route path="*" element={<Page404/>}/>
-        </Routes>
-    );
-}
-
+const AppRoutes = (isAuthenticated) => {
+    if(isAuthenticated){
+        return( 
+            <Routes>
+                <Route path="/" element={<Navigate to="dashboard"/>}/>
+                <Route path='/dashboard' element={<Dashboard/>}/>
+                <Route path='/account' element={<Account/>}/>
+                <Route path='/edit' element={<Edit/>}/>
+                <Route path='/transaction' element={<Transaction/>}/>
+                <Route path="/statistic" element={<Statistic/>}/>
+                <Route path='/gamefication' element={<Gamefiacation/>}/>
+                <Route path="*" element={<Page404 item="dashboard"/>}/>
+            </Routes>
+        );
+    }
+    else{
+        return(
+            <Routes>
+                <Route path="/" element={<Navigate to="/registration" />} />
+                <Route path='/registration' element={<Registration/>}/>
+                <Route path='/signin' element={<SignIn/>}/>
+                <Route path="*" element={<Page404 item="registration"/>}/>
+            </Routes>
+        )
+    }
+}; 
 export default AppRoutes;

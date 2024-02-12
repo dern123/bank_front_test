@@ -1,0 +1,8 @@
+.header__container{
+    padding: 10px;
+    background-color: #000780;
+    transition: border-radius ease-out .2s;
+    &:hover{
+        border-radius: 0% 0% 10% 10%;
+    }
+}
